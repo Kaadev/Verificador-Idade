@@ -1,7 +1,12 @@
 body {
-  background: rgb(64, 170, 208);
+  background: background-color: #00DBDE;
+  background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
   font: normal 15pt Arial; 
   color: white;
+}
+
+header{
+  text-align: center;
 }
 
 section {
@@ -22,3 +27,7 @@ footer {
     width: auto;  
     height: 450px;
     }
+
+#botao {
+  text-align: center;
+}

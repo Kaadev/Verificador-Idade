@@ -12,12 +12,15 @@ function verificar() {
     var fsex = document.getElementsByName('radsex') //Pega o sexo e coloca na var, como ambos tem o mesmo nome o [0] é o masc e o [1] é o fem
     var idade = ano - Number(fano.value) //Calcula idade do usuário ano atual - ano de nasc
     var genero = ''
-    var img = ''
+    // var img = ''
     var img = document.createElement('img') //Cria um elemento img com JS
     img.setAttribute('id', 'foto') //Criando um atributo id "foto" para img 
+    var backcolor = ' '
 
     if (fsex[0].checked) {
       genero = 'Masculino'
+      backcolor = window.document.querySelector('body')
+      backcolor.style.background='linear-gradient(90deg, #0f2d78 0%, #97D9E1 100%)'
       if (idade >= 0 && idade < 10) {
         img.setAttribute('src', 'bebe-menino.png')
       } else if (idade < 21) {
@@ -25,10 +28,12 @@ function verificar() {
       } else if (idade < 50) {
         img.setAttribute('src', 'homem.png')
       } else {
-        //idoso
+        img.setAttribute('src', 'vovô.png')
       }
     } else if (fsex[1].checked) {
       genero = 'Feminino'
+      backcolor = window.document.querySelector('body')  
+      backcolor.style.background='linear-gradient(90deg, #D9AFD9 0%, #c748eb 100%)'
       if (idade >= 0 && idade < 10) {
         img.setAttribute('src', 'bebe-menina.png')
       } else if (idade < 21) {
@@ -36,11 +41,11 @@ function verificar() {
       } else if (idade < 50) {
         img.setAttribute('src', 'mulher.png')
       } else {
-        //idoso
+        img.setAttribute('src', 'vovó.png')
       }
     }
     res.style.textAlign= 'center' //colocar stylo com JS
-    res.innerHTML = `<p> Detectado gênero ${genero} com ${idade} anos </p>`
+    res.innerHTML = `<p> Detectado gênero ${genero} com ${idade} anos.</p>`
     res.appendChild(img)
   }
 }
